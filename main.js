@@ -1,12 +1,11 @@
-const express = require('express');
+const Koa = require('koa');
+const app = new Koa();
 
-const app = express();
-
-app.get('/',(req,res)=>{
-  res.send('hello world')
-})
+app.use(async ctx => {
+    ctx.body = 'Hello Vercel, Hi Koa2';
+});
 
 
-app.listen(8888,()=>{
-  console.log('已运行');
-})
+app.listen(3008, () => {
+    console.log('3008项目启动')
+});
